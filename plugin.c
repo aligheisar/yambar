@@ -126,7 +126,7 @@ type2str(enum plugin_type type)
     case PLUGIN_DECORATION: return "decoration";
     }
 
-    return NULL;
+    return "unknown";
 }
 
 static void __attribute__((constructor))

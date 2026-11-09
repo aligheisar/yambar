@@ -1272,6 +1272,7 @@ loop(struct bar *_bar,
             }
 
             LOG_DBG("coalesced %zu expose commands", count);
+            (void)count;
             if (do_expose)
                 expose(_bar);
         }

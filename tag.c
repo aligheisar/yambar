@@ -476,7 +476,7 @@ tags_expand_template(const char *template, const struct tag_set *tags)
 
         static const size_t MAX_TAG_ARGS = 4;
         const char *tag_name = NULL;
-        const char *tag_args[MAX_TAG_ARGS];
+        char *tag_args[MAX_TAG_ARGS];
         memset(tag_args, 0, sizeof(tag_args));
 
         {
@@ -484,7 +484,7 @@ tags_expand_template(const char *template, const struct tag_set *tags)
             tag_name = strtok_r(tag_name_and_arg, ":", &saveptr);
 
             for (size_t i = 0; i < MAX_TAG_ARGS; i++) {
-                const char *arg = strtok_r(NULL, ":", &saveptr);
+                char *arg = strtok_r(NULL, ":", &saveptr);
                 if (arg == NULL)
                     break;
                 tag_args[i] = arg;

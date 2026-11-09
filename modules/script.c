@@ -274,7 +274,7 @@ process_transaction(struct module *mod, size_t size)
     size_t idx = 0;
 
     while (left > 0) {
-        char *line_end = memchr(line, '\n', left);
+        const char *line_end = memchr(line, '\n', left);
         assert(line_end != NULL);
 
         size_t line_len = line_end - line;

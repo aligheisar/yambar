@@ -589,6 +589,7 @@ handle_window_event(int sock, int type, const struct json_object *json, void *_m
     }
 
     assert(focused == 1);
+    (void)focused;
     assert(ws != NULL);
 
     if (is_close) {
